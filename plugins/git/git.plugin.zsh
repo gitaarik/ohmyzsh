@@ -108,6 +108,9 @@ alias gds='git diff --staged'
 alias gdt='git diff-tree --no-commit-id --name-only -r'
 alias gdw='git diff --word-diff'
 
+# Show a diff betwheen the local branch and the remote tracking branch
+alias gdr='git diff $(git rev-parse --abbrev-ref $(git_current_branch)@{upstream})'
+
 function gdnolock() {
   git diff "$@" ":(exclude)package-lock.json" ":(exclude)*.lock"
 }
